@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #111;
+    margin-top: 10px;
+    box-shadow: 0 0 5px #fff;
+}
+
+.values input {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    text-align: right;
+    border: 2px solid #222;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#result {
+    display: none;
+}
+
+.btns-value {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns-disabled {
+    display: flex;
+    gap: 23px;
+    justify-content: end;
+    margin-bottom: 15px;
+}
+
+.btns-disabled button {
+    padding: 8px 0;
+    width: 60px;
+    background: #000;
+    border: 1px solid #222;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btns-disabled button:nth-child(2),.btns button.delete-btn {
+    background: rgb(238, 61, 61);
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btns button {
+    width: 60px;
+    padding: 10px 0;
+    font-size: 15px;
+    background: #000;
+    border: 1px solid #222;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btns button:active {
+    background: #111111a7;
+}
+
+button.operateur {
+    background: #0f72ce;
+}
+
+button.eval {
+    background: #24912e;
+}
