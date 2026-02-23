@@ -1,36 +1,46 @@
-// function calculatrice
-let value;
-const additionneur = (additionneur) => {
-    document.getElementById('result').value += additionneur;
+let resultInput = document.getElementById('result');
+let justCalculated = false;
+let lastCharIsOperator = false;
+
+function number(num) {
+    if (justCalculated) {
+        resultInput.value = "";
+        justCalculated = false;
+    }
+    resultInput.value += num;
+    lastCharIsOperator = false;
 }
-const operateur = (operateur) => {
-    document.getElementById('result').value += operateur;
+
+
+function operator (ope) {
+    if (resultInput.value === "") return;
+    if (lastCharIsOperator) return;
+    resultInput.value += ope;
+    lastCharIsOperator = true;
+    justCalculated = false;
 }
 
 const del = () => {
-    const resultInput = document.getElementById('result');
-    // Supprime le dernier caractère de l'input
     resultInput.value = resultInput.value.slice(0, -1);
+    lastCharIsOperator = /[\+\-\*\/]$/.test(resultInput.value);
 }
-
-
 const egal = () => {
     try {
-        let result = document.getElementById('result').value;
-        let response = eval(result);
-        document.getElementById('result').value = response;
-    } catch (error) {
-        document.getElementById('result').value = "error";
-        value = "";
+        resultInput.value = eval(resultInput.value);
+        justCalculated = true;
+        lastCharIsOperator = false;
+    } catch {
+        resultInput.value = "error";
+        justCalculated = false;
     }
 }
 
 const off = () => {
     document.querySelector('#result').style.display = 'none';
-    document.querySelector('#disable').style.display = 'flex';
+    document.querySelector('#disable').style.display = 'block';
 }
 
 const on = () => {
-    document.querySelector('#result').style.display = 'flex';
+    document.querySelector('#result').style.display = 'block';
     document.querySelector('#disable').style.display = 'none';
 }
