@@ -21,7 +21,7 @@ body {
     border-radius: 10px;
     background: #111;
     margin-top: 10px;
-    box-shadow: 0 0 5px #fff;
+    border: 1px solid #666;
 }
 
 .values input {
