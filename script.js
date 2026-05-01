@@ -51,6 +51,7 @@ actions.forEach(action => {
 
         if (action.textContent == 'AC') {
             operation = '0';
+            result = '0';
         }
 
         if (action.textContent == "") {
